@@ -40,9 +40,12 @@ class FltWifiManagerPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             }
             "turnOn" -> {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    val panelIntent = Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY)
-                    panelIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                    activityBinding.activity.startActivity(panelIntent)
+                    try {
+                        val panelIntent = Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY)
+                        panelIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                        activityBinding.activity.startActivity(panelIntent)
+                    } catch (e: Exception) {
+                    }
                 } else {
                     val wifiManager = flutterPluginBinding.applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
                     wifiManager.isWifiEnabled = true
@@ -51,9 +54,12 @@ class FltWifiManagerPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             }
             "turnOff" -> {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    val panelIntent = Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY)
-                    panelIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                    activityBinding.activity.startActivity(panelIntent)
+                    try {
+                        val panelIntent = Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY)
+                        panelIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                        activityBinding.activity.startActivity(panelIntent)
+                    } catch (e: Exception) {
+                    }
                 } else {
                     val wifiManager = flutterPluginBinding.applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
                     wifiManager.isWifiEnabled = false
