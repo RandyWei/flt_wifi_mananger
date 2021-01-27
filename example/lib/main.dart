@@ -32,6 +32,7 @@ class _MyAppState extends State<MyApp> {
         FltWifiManager.turnOn();
       else
         FltWifiManager.turnOff();
+      toggle = !toggle;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
