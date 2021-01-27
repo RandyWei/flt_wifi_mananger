@@ -16,6 +16,13 @@ dependencies:
       url: https://github.com/RandyWei/flt_wifi_mananger.git
 ```
 
+### 配置权限
+在android/app/src/main/AndroidManifest.xml 中添加以下权限
+```xml
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+```
+
 ### 示例
 
 导包
