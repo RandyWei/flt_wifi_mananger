@@ -1,6 +1,6 @@
-# 我的宁夏
+# wifi 管理器
 
-登录SDK
+wifi 管理器，在 Android Q 之前，可直接控制 WIFI 开关；在 Android Q 之后，会直接打开 wifi 面板
 
 ## 使用说明
 
@@ -11,17 +11,22 @@
 
 //导入方式
 dependencies:
-  flt_ningxia_login:
+  flt_wifi_mananger:
     git:
-      url: http://mobilegit.chinahrt.com/mobile/flt_ningxia_login.git
+      url: https://github.com/RandyWei/flt_wifi_mananger.git
 ```
 
 ### 示例
 
+导包
 ```dart
-//初始化
-FltNingxiaLogin.init('clientId', true);
+import 'package:flt_wifi_manager/flt_wifi_manager.dart'; 
+```
 
-//调起登录界面
-FltNingxiaLogin.startLogin((data) => print(data))
+```dart
+// 打开 WIFI
+FltWifiManager.turnOn();
+
+// 关闭 WIFI
+FltWifiManager.turnOff();
 ```
